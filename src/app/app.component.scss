@@ -1,9 +1,7 @@
 .pic-navbar {
-    display: flex;
-    flex-direction: column;
-}
-
-img{
     width: 100%;
     height: 600px;
+    background: url(../assets/image2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
