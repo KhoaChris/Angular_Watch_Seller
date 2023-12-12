@@ -8,9 +8,15 @@ import { BottomRowNavbarComponent } from './components/bottom-row-navbar/bottom-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NavbarComponent,PageContentsComponent,BottomRowNavbarComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NavbarComponent,
+    PageContentsComponent,
+    BottomRowNavbarComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Angular2';
