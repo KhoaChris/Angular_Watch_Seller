@@ -1,3 +1,17 @@
-:host {
-  display: block;
+.picture-contents {
+  width: 100%;
+  height: 1000px;
+  background: url(../../../assets/image18.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: -30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contents-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

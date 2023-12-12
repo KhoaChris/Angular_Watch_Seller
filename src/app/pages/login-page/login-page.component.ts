@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { PageContentsLoginComponent } from '../../components/page-contents-login/page-contents-login.component';
 
 
 @Component({
@@ -8,7 +9,8 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   standalone: true,
   imports: [
     CommonModule,
-    NavbarComponent
+    NavbarComponent,
+    PageContentsLoginComponent
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss',

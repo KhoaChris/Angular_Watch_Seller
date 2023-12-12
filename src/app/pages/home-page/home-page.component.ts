@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { BottomRowNavbarComponent } from '../../components/bottom-row-navbar/bottom-row-navbar.component';
-import { PageContentsComponent } from '../../components/page-contents/page-contents.component';
+import { PageContentsComponent } from '../../components/page-contents-home/page-contents.component';
 
 @Component({
   selector: 'app-home-page',
