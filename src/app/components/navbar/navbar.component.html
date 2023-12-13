@@ -10,8 +10,23 @@
   </div>
 
   <div class="user-contents">
-    <span class="material-symbols-outlined" (click)="navToLogin()"> account_circle </span>
+    @if (token == 0) {
+    <span class="material-symbols-outlined" (click)="navToLogin()">
+      account_circle
+    </span>
+    }@else if (token == 1) {
+    <img id="avatar-pic" src="../../../assets/unnamed.jpg" alt="" />
+    }
     <span class="material-symbols-outlined"> favorite </span>
     <span class="material-symbols-outlined"> shopping_cart </span>
+    @if (token == 0) {
+    <span class="material-symbols-outlined" (click)="handleClickLogin()">
+      login
+    </span>
+    } @else if (token == 1) {
+    <span class="material-symbols-outlined" (click)="handleClickLogout()">
+      logout
+    </span>
+    }
   </div>
 </div>

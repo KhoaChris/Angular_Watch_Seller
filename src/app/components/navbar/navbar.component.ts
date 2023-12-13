@@ -13,11 +13,25 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   constructor(private router: Router) {}
 
+  token = 0;
+
   navToHome() {
     this.router.navigate(['']);
   }
 
   navToLogin() {
     this.router.navigate(['/Login']);
+  }
+
+  handleClickLogin() {
+    this.token = 1;
+    alert('You have successfully logged in.')
+    console.log(this.token);
+  }
+
+  handleClickLogout() {
+    this.token = 0;
+    alert('You have successfully logged out.')
+    console.log(this.token);
   }
 }

@@ -13,7 +13,15 @@ import { Router } from '@angular/router';
 export class PageContentsLoginComponent {
   constructor(private router: Router) {}
 
+  token = 0;
+
   navToSignUp() {
     this.router.navigate(['/Signup']);
+  }
+
+  handleClickMe() {
+    this.token = 1;
+    alert('You have successfully logged in, redirecting to Home page.');
+    this.router.navigate(['']);
   }
 }
