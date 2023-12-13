@@ -18,6 +18,6 @@ export class NavbarComponent {
   }
 
   navToLogin() {
-    this.router.navigate(['/LOGIN']);
+    this.router.navigate(['/Login']);
   }
 }

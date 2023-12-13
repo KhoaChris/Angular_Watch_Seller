@@ -1,13 +1,14 @@
 .login-container {
   background-color: transparent;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   border: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  padding: 30px;
-  margin-top: 200px;
+  gap: 20px;
+  padding: 40px 50px;
+  margin-top: 160px;
 }
 
 h1 {
@@ -19,6 +20,20 @@ h1 {
   text-align: center;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  p {
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
+}
+
 .user {
   border-radius: 4px;
   color: #fff;
@@ -27,7 +42,8 @@ h1 {
   outline: none;
   font-size: 15px;
   border: 1px solid #464444;
-  height: 18px;
+  height: 15px;
+  width: 250px;
 
   &:hover {
     background-color: lighten($color: #464444, $amount: 3);
@@ -43,7 +59,7 @@ h1 {
   outline: none;
   font-size: 15px;
   border: 1px solid #464444;
-  height: 18px;
+  height: 15px;
 
   &:hover {
     background-color: lighten($color: #464444, $amount: 3);
@@ -62,7 +78,8 @@ h1 {
   position: relative;
   padding-left: 28px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 300;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -139,7 +156,7 @@ h1 {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  width: 100px;
+  width: 140px;
   align-self: center;
   cursor: pointer;
 
@@ -154,9 +171,51 @@ a {
   font-family: Roboto, sans-serif;
   font-size: 12px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
+  cursor: pointer;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: darken($color: white, $amount: 10);
+  }
+}
+
+#other-login-text {
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 2px;
+
+}
+
+.methods {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  img {
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+#sign-up {
+  text-align: center;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
   line-height: normal;
   text-decoration: underline 1px;
-  text-underline-offset: 5px;
+  text-underline-offset: 2px;
   cursor: pointer;
+
+  &:hover {
+    color: darken($color: white, $amount: 10);
+  }
 }

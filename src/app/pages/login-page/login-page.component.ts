@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { PageContentsLoginComponent } from '../../components/page-contents-login/page-contents-login.component';
-
+import { SignupPageComponent } from '../signup-page/signup-page.component';
 
 @Component({
   selector: 'app-login-page',
@@ -10,10 +10,11 @@ import { PageContentsLoginComponent } from '../../components/page-contents-login
   imports: [
     CommonModule,
     NavbarComponent,
-    PageContentsLoginComponent
+    PageContentsLoginComponent,
+    SignupPageComponent,
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss',
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class LoginPageComponent { }
+export class LoginPageComponent {}

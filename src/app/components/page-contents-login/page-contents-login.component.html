@@ -1,7 +1,13 @@
 <div class="login-container">
   <h1>WELCOME</h1>
-  <input type="text" class="user" placeholder="Username" />
-  <input type="password" class="password" placeholder="Password" />
+  <div class="input-container">
+    <p>Username</p>
+    <input type="text" class="user" />
+  </div>
+  <div class="input-container">
+    <p>Password</p>
+    <input type="password" class="password" />
+  </div>
   <div class="focuscheck">
     <label class="container"
       >Remember me
@@ -9,6 +15,16 @@
       <span class="checkmark"></span>
     </label>
   </div>
-  <button id="btn-login">Log In</button>
-  <a href="/LOGIN" >Forget password ?</a>
+  <div class="input-container">
+    <button id="btn-login">Log In</button>
+    <a href="/Login">Forget password ?</a>
+  </div>
+  <div class="input-container">
+    <p id="other-login-text">Others way to signed in</p>
+    <div class="methods">
+      <img src="../../../assets/image 19.png" alt="">
+      <img src="../../../assets/image 20.png" alt="">
+    </div>
+    <p id="sign-up" (click)="navToSignUp()">Click here to create account</p>
+  </div>
 </div>
