@@ -7,11 +7,11 @@
   <div class="input-container">
     <p>Password</p>
     <div class="password-holder">
-      <input type="password" id="password" formControlName="password" />
-      @if (isVisible == false) {
-      <span class="material-symbols-outlined" id="toggle"> visibility_off </span>
-      } @else if (isVisible == true) {
-      <span class="material-symbols-outlined" id="toggle"> visibility </span>
+      <input [type]="show ? 'text' : 'password'" id="password" formControlName="password" />
+      @if (show == false) {
+      <span class="material-symbols-outlined" id="toggle" (click)="passwordShow()"> visibility_off </span>
+      } @else if (show == true) {
+      <span class="material-symbols-outlined" id="toggle" (click)="passwordHide()"> visibility </span>
       }
     </div>
   </div>

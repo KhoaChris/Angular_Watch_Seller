@@ -46,24 +46,47 @@ h1 {
   width: 250px;
 
   &:hover {
-    background-color: lighten($color: #464444, $amount: 3);
-    border-color: lighten($color: #464444, $amount: 3);
+    background-color: lighten($color: #464444, $amount: 2);
+    border-color: lighten($color: #464444, $amount: 2);
   }
 }
 
-#password {
-  border-radius: 4px;
-  color: #fff;
-  padding: 10px;
-  background-color: #464444;
-  outline: none;
-  font-size: 15px;
-  border: 1px solid #464444;
-  height: 15px;
+.password-holder {
+  display: flex;
+  align-items: center;
 
-  &:hover {
-    background-color: lighten($color: #464444, $amount: 3);
-    border-color: lighten($color: #464444, $amount: 3);
+  #password {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: #fff;
+    padding: 10px;
+    background-color: #464444;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid #464444;
+    height: 15px;
+    width: 214.33px;
+
+    &:hover {
+      background-color: lighten($color: #464444, $amount: 2);
+      border-color: lighten($color: #464444, $amount: 2);
+    }
+  }
+
+  span {
+    cursor: pointer;
+    padding: 5.5px;
+    border-top: 1px solid #464444;
+    border-right: 1px solid #464444;
+    border-bottom: 1px solid #464444;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #464444;
+    color: white;
+
+    &:hover {
+      color: darken($color: white, $amount: 15);
+    }
   }
 }
 
@@ -189,7 +212,6 @@ a {
   line-height: normal;
   text-align: center;
   letter-spacing: 2px;
-
 }
 
 .methods {

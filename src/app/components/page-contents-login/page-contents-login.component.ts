@@ -62,10 +62,21 @@ export class PageContentsLoginComponent {
           user.username !== this.loginForm.value.username ||
           user.password !== this.loginForm.value.password
         ) {
-          alert('Invalid username or password !!!');
+          alert('Wrong username or password !!!');
         }
       }
+    } else if (this.loginForm.invalid) {
+      alert('Please fill in both username and password !!!');
     }
   }
 
+  show = false;
+  //Click toggle show password
+  passwordShow() {
+    this.show = true;
+  }
+
+  passwordHide() {
+    this.show = false;
+  }
 }

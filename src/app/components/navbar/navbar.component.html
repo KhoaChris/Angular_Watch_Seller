@@ -1,6 +1,6 @@
 <div class="navbar">
   <div class="logo">
-    <img src="../../../assets/LOGO1.png" alt="" />
+    <img src="../../../assets/LOGO1.png" alt="" (click)="navToHome()" />
   </div>
 
   <div class="contents">
@@ -11,16 +11,16 @@
 
   <div class="user-contents">
     @if (isLogin == false) {
-    <span class="material-symbols-outlined">
-      account_circle
-    </span>
+    <span class="material-symbols-outlined"> account_circle </span>
     }@else if (isLogin == true) {
     <img id="avatar-pic" src="../../../assets/unnamed.jpg" alt="" />
     }
     <span class="material-symbols-outlined"> favorite </span>
     <span class="material-symbols-outlined"> shopping_cart </span>
     @if (isLogin == false) {
-    <span class="material-symbols-outlined" (click)="navToLogin()"> login </span>
+    <span class="material-symbols-outlined" (click)="navToLogin()">
+      login
+    </span>
     } @else if (isLogin == true) {
     <span class="material-symbols-outlined" (click)="logOut()"> logout </span>
     }
