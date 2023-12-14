@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +17,32 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.scss',
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class NavbarComponent {
-  constructor(private router: Router) {}
+export class NavbarComponent implements OnInit {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router
+  ) {}
 
-  token = 0;
+  isLogin = false;
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const storedData = window.localStorage.getItem('isLogin');
+      if (storedData) {
+        this.isLogin = true;
+      }
+    } else {
+      console.log('You must active in the browser');
+    }
+  }
+
+  logOut() {
+    localStorage.removeItem('isLogin');
+    localStorage.removeItem('account');
+    window.location.reload();
+    this.router.navigate(['']);
+    alert('You have logged out');
+  }
 
   navToHome() {
     this.router.navigate(['']);
@@ -25,17 +54,5 @@ export class NavbarComponent {
 
   navToWatches() {
     this.router.navigate(['Watches']);
-  }
-
-  handleClickLogin() {
-    this.token = 1;
-    alert('You have successfully logged in.');
-    console.log(this.token);
-  }
-
-  handleClickLogout() {
-    this.token = 0;
-    alert('You have successfully logged out.');
-    console.log(this.token);
   }
 }

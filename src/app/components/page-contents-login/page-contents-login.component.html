@@ -1,12 +1,19 @@
-<form [formGroup]="myForm" class="login-container">
+<form [formGroup]="loginForm" class="login-container">
   <h1>WELCOME</h1>
   <div class="input-container">
     <p>Username</p>
-    <input type="text" class="user" formControlName="username"/>
+    <input type="text" class="user" formControlName="username" />
   </div>
   <div class="input-container">
     <p>Password</p>
-    <input type="password" class="password" formControlName="password"/>
+    <div class="password-holder">
+      <input type="password" id="password" formControlName="password" />
+      @if (isVisible == false) {
+      <span class="material-symbols-outlined" id="toggle"> visibility_off </span>
+      } @else if (isVisible == true) {
+      <span class="material-symbols-outlined" id="toggle"> visibility </span>
+      }
+    </div>
   </div>
   <div class="focuscheck">
     <label class="container"

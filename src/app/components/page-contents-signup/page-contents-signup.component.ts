@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-page-contents-signup',
@@ -17,11 +20,5 @@ export class PageContentsSignupComponent {
 
   navToLogIn() {
     this.router.navigate(['Login']);
-  }
-
-  handleClick() {
-    this.token = 1;
-    alert('You have successfully signed up. Redirecting back to Login page.');
-    this.router.navigate(['/Login']);
   }
 }

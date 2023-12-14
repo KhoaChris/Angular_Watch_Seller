@@ -24,16 +24,15 @@ export class PageContentsLoginComponent {
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
-  users = require('../../../assets/json/user.json');
-  myForm = new FormGroup({
+  isVisible = false;
+  users = require('../../models/json/users.json');
+  loginForm = new FormGroup({
     username: new FormControl('', Validators.required),
     password: new FormControl('', [Validators.required]),
   });
 
   ngOnInit(): void {
-    // Kiểm tra xem có phải đang chạy trên trình duyệt không
     if (isPlatformBrowser(this.platformId)) {
-      // Truy cập localStorage khi đang ở trình duyệt
       const storedData = window.localStorage.getItem('isLogin');
       if (storedData == '1') {
         this.router.navigate(['']);
@@ -47,20 +46,26 @@ export class PageContentsLoginComponent {
     this.router.navigate(['Signup']);
   }
 
-  handleClickMe():void {
-    if (!this.myForm.invalid) {
+  handleClickMe(): void {
+    if (!this.loginForm.invalid) {
       for (const user of this.users) {
         if (
-          user.username === this.myForm.value.username &&
-          user.password === this.myForm.value.password
+          user.username === this.loginForm.value.username &&
+          user.password === this.loginForm.value.password
         ) {
           localStorage.setItem('isLogin', '1');
           localStorage.setItem('account', JSON.stringify(user));
           this.router.navigate(['']);
-          console.log('Login succesfull');
+          alert('You have successfully login');
           break;
+        } else if (
+          user.username !== this.loginForm.value.username ||
+          user.password !== this.loginForm.value.password
+        ) {
+          alert('Invalid username or password !!!');
         }
       }
     }
   }
+
 }
