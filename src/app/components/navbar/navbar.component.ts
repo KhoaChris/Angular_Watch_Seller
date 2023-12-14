@@ -23,6 +23,10 @@ export class NavbarComponent {
     this.router.navigate(['/Login']);
   }
 
+  navToWatches() {
+    this.router.navigate(['/Watches']);
+  }
+
   handleClickLogin() {
     this.token = 1;
     alert('You have successfully logged in.')
