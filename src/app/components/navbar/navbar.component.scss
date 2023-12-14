@@ -71,7 +71,7 @@
     cursor: pointer;
     color: #262626;
 
-    &:hover{
+    &:hover {
       color: darken($color: #262626, $amount: 30);
     }
   }
@@ -81,4 +81,9 @@
   height: 25px;
   width: 25px;
   border-radius: 50%;
+  border: 2px solid green;
+
+  &:hover {
+    border: 2px solid lighten($color: green, $amount: 10);
+  }
 }
