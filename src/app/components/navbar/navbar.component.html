@@ -6,7 +6,7 @@
   <div class="contents">
     <a class="features" (click)="navToHome()">HOME</a>
     <a class="features" (click)="navToWatches()">WATCHES</a>
-    <a class="features">ABOUT</a>
+    <a class="features" (click)="navToAboutUs()">ABOUT</a>
   </div>
 
   <div class="user-contents">
@@ -15,14 +15,13 @@
     }@else if (isLogin == true) {
     <img id="avatar-pic" src="../../../assets/unnamed.jpg" alt="" />
     }
+    <span class="material-symbols-outlined"> notifications </span>
     <span class="material-symbols-outlined"> favorite </span>
     <span class="material-symbols-outlined"> shopping_cart </span>
     @if (isLogin == false) {
-    <span class="material-symbols-outlined" (click)="navToLogin()">
-      login
-    </span>
+      <span class="material-symbols-outlined" (click)="navToLogin()">login</span>
     } @else if (isLogin == true) {
-    <span class="material-symbols-outlined" (click)="logOut()"> logout </span>
+      <span class="material-symbols-outlined" (click)="logOut()"> logout </span>
     }
   </div>
 </div>

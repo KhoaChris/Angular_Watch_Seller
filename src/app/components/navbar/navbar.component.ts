@@ -55,4 +55,8 @@ export class NavbarComponent implements OnInit {
   navToWatches() {
     this.router.navigate(['Watches']);
   }
+
+  navToAboutUs() {
+    this.router.navigate(['About-Us']);
+  }
 }
