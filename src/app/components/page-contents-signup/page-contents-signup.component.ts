@@ -16,7 +16,7 @@ export class PageContentsSignupComponent {
   token = 0;
 
   navToLogIn() {
-    this.router.navigate(['/Login']);
+    this.router.navigate(['Login']);
   }
 
   handleClick() {

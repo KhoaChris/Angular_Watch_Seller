@@ -17,4 +17,6 @@ import { PageContentsComponent } from '../../components/page-contents-home/page-
   styleUrl: './home-page.component.scss',
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class HomePageComponent { }
+export class HomePageComponent { 
+  
+}

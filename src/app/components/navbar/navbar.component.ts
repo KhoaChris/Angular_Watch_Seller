@@ -20,22 +20,22 @@ export class NavbarComponent {
   }
 
   navToLogin() {
-    this.router.navigate(['/Login']);
+    this.router.navigate(['Login']);
   }
 
   navToWatches() {
-    this.router.navigate(['/Watches']);
+    this.router.navigate(['Watches']);
   }
 
   handleClickLogin() {
     this.token = 1;
-    alert('You have successfully logged in.')
+    alert('You have successfully logged in.');
     console.log(this.token);
   }
 
   handleClickLogout() {
     this.token = 0;
-    alert('You have successfully logged out.')
+    alert('You have successfully logged out.');
     console.log(this.token);
   }
 }
