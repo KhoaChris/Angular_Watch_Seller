@@ -1,20 +1,10 @@
 .context {
   display: flex;
   flex-direction: column;
-  margin-left: 750px;
+  margin-left: 650px;
   margin-top: 170px;
   align-items: center;
   gap: 60px;
-}
-
-h1 {
-  color: #fff;
-  font-family: Roboto, sans-serif;
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 10px;
 }
 
 .main-container {
@@ -26,7 +16,7 @@ h1 {
 .paragraph-container {
   display: inline-block;
   position: relative;
-  width: 550px;
+  width: 600px;
   text-align: center;
   padding-bottom: 20px;
 
@@ -43,7 +33,7 @@ h1 {
   p {
     color: #fff;
     font-family: Roboto, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
