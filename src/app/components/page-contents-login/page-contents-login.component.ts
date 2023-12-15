@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { isPlatformBrowser } from '@angular/common';
+import { PopupService } from '../popup/popup.service';
 
 @Component({
   selector: 'app-page-contents-login',
@@ -21,7 +22,8 @@ import { isPlatformBrowser } from '@angular/common';
 export class PageContentsLoginComponent {
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private popupService: PopupService
   ) {}
 
   isVisible = false;
@@ -55,18 +57,20 @@ export class PageContentsLoginComponent {
         ) {
           localStorage.setItem('isLogin', '1');
           localStorage.setItem('account', JSON.stringify(user));
+          this.popupService.openPopup('You have successfully logged in');
           this.router.navigate(['']);
-          alert('You have successfully login');
           break;
         } else if (
           user.username !== this.loginForm.value.username ||
           user.password !== this.loginForm.value.password
         ) {
-          alert('Wrong username or password !!!');
+          this.popupService.openPopup('Pasword or username is incorrect');
         }
       }
     } else if (this.loginForm.invalid) {
-      alert('Please fill in both username and password !!!');
+      this.popupService.openPopup(
+        'Please fill in both username and password !!!'
+      );
     }
   }
 
