@@ -15,9 +15,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class PageContentsSignupComponent {
   constructor(private router: Router) {}
-
-  token = 0;
-
+  
   navToLogIn() {
     this.router.navigate(['Login']);
   }
