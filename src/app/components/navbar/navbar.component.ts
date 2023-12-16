@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { PopupService } from '../popup/popup.service';
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +21,8 @@ import { isPlatformBrowser } from '@angular/common';
 export class NavbarComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private router: Router
+    private router: Router,
+    private popupService: PopupService
   ) {}
 
   isLogin = false;
@@ -36,12 +38,20 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  logOut() {
+  async logOut() {
     localStorage.removeItem('isLogin');
     localStorage.removeItem('account');
+    this.popupService.openPopup('You have successfully log out');
+
+    // Delay for 5 seconds before reloading the page
+    await this.delay(2000);
+
     window.location.reload();
     this.router.navigate(['']);
-    alert('You have logged out');
+  }
+
+  delay(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   navToHome() {
@@ -58,5 +68,9 @@ export class NavbarComponent implements OnInit {
 
   navToAboutUs() {
     this.router.navigate(['About-Us']);
+  }
+
+  alertFalse() {
+    this.popupService.openPopup('Please login first to use this function');
   }
 }

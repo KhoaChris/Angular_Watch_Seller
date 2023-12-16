@@ -1,1 +1,17 @@
+#container {
+  padding: 20px;
+  background-color: #464444;
+  border-radius: 100px;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+#contents {
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}

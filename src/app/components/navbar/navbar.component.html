@@ -12,16 +12,30 @@
   <div class="user-contents">
     @if (isLogin == false) {
     <span class="material-symbols-outlined"> account_circle </span>
-    }@else if (isLogin == true) {
+    } @else {
     <img id="avatar-pic" src="../../../assets/unnamed.jpg" alt="" />
-    }
+    } @if (isLogin == false) {
+    <span class="material-symbols-outlined" (click)="alertFalse()">
+      notifications
+    </span>
+    } @else {
     <span class="material-symbols-outlined"> notifications </span>
+    } @if (isLogin == false) {
+    <span class="material-symbols-outlined" (click)="alertFalse()">
+      favorite
+    </span>
+    } @else {
     <span class="material-symbols-outlined"> favorite </span>
+    } @if (isLogin == false) {
+    <span class="material-symbols-outlined" (click)="alertFalse()">
+      shopping_cart
+    </span>
+    } @else {
     <span class="material-symbols-outlined"> shopping_cart </span>
-    @if (isLogin == false) {
-      <span class="material-symbols-outlined" (click)="navToLogin()">login</span>
+    } @if (isLogin == false) {
+    <span class="material-symbols-outlined" (click)="navToLogin()">login</span>
     } @else if (isLogin == true) {
-      <span class="material-symbols-outlined" (click)="logOut()"> logout </span>
+    <span class="material-symbols-outlined" (click)="logOut()"> logout </span>
     }
   </div>
 </div>

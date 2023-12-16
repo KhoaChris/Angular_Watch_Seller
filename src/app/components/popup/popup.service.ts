@@ -9,8 +9,7 @@ export class PopupService {
   constructor(public dialog: MatDialog) {}
 
   openPopup(message: string): void {
-    this.dialog.open(PopupComponent, {
-      width: '300px',
+    this.dialog.open(PopupComponent, { 
       data: { message },
     });
   }

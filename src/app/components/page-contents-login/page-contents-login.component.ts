@@ -4,6 +4,7 @@ import {
   Component,
   Inject,
   PLATFORM_ID,
+  ViewEncapsulation,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -57,19 +58,19 @@ export class PageContentsLoginComponent {
         ) {
           localStorage.setItem('isLogin', '1');
           localStorage.setItem('account', JSON.stringify(user));
-          this.popupService.openPopup('You have successfully logged in');
+          this.popupService.openPopup('You have successfully logged in. Redirect to Home page.');
           this.router.navigate(['']);
           break;
         } else if (
           user.username !== this.loginForm.value.username ||
           user.password !== this.loginForm.value.password
         ) {
-          this.popupService.openPopup('Pasword or username is incorrect');
+          this.popupService.openPopup('Pasword or username is INCORRECT !!!');
         }
       }
     } else if (this.loginForm.invalid) {
       this.popupService.openPopup(
-        'Please fill in both username and password !!!'
+        'Please FILL IN both username and password !!!'
       );
     }
   }
