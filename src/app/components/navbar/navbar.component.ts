@@ -43,7 +43,7 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('account');
     this.popupService.openPopup('You have successfully log out');
 
-    // Delay for 5 seconds before reloading the page
+    // Delay for 2 seconds before reloading the page
     await this.delay(2000);
 
     window.location.reload();

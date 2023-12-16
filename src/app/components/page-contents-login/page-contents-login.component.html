@@ -7,11 +7,27 @@
   <div class="input-container">
     <p>Password</p>
     <div class="password-holder">
-      <input [type]="show ? 'text' : 'password'" id="password" formControlName="password" />
+      <input
+        [type]="show ? 'text' : 'password'"
+        id="password"
+        formControlName="password"
+      />
       @if (show == false) {
-      <span class="material-symbols-outlined" id="toggle" (click)="passwordShow()"> visibility_off </span>
+      <span
+        class="material-symbols-outlined"
+        id="toggle"
+        (click)="passwordShow()"
+      >
+        visibility_off
+      </span>
       } @else if (show == true) {
-      <span class="material-symbols-outlined" id="toggle" (click)="passwordHide()"> visibility </span>
+      <span
+        class="material-symbols-outlined"
+        id="toggle"
+        (click)="passwordHide()"
+      >
+        visibility
+      </span>
       }
     </div>
   </div>

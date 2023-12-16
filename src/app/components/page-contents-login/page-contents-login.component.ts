@@ -49,7 +49,7 @@ export class PageContentsLoginComponent {
     this.router.navigate(['Signup']);
   }
 
-  handleClickMe(): void {
+  async handleClickMe() {
     if (!this.loginForm.invalid) {
       for (const user of this.users) {
         if (
@@ -58,7 +58,13 @@ export class PageContentsLoginComponent {
         ) {
           localStorage.setItem('isLogin', '1');
           localStorage.setItem('account', JSON.stringify(user));
-          this.popupService.openPopup('You have successfully logged in. Redirect to Home page.');
+          this.popupService.openPopup(
+            'You have successfully logged in. Redirect to Home page.'
+          );
+
+          // Delay for 2 seconds before reloading the page
+          await this.delay(2000);
+
           this.router.navigate(['']);
           break;
         } else if (
@@ -73,6 +79,10 @@ export class PageContentsLoginComponent {
         'Please FILL IN both username and password !!!'
       );
     }
+  }
+
+  delay(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   show = false;
