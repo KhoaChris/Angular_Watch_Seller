@@ -7,6 +7,7 @@
     <a class="features" (click)="navToHome()">HOME</a>
     <a class="features" (click)="navToWatches()">WATCHES</a>
     <a class="features" (click)="navToAboutUs()">ABOUT</a>
+    <a class="features">ACESSORIES</a>
   </div>
 
   <div class="user-contents">
@@ -14,18 +15,6 @@
     <span class="material-symbols-outlined"> account_circle </span>
     } @else {
     <img id="avatar-pic" src="../../../assets/unnamed.jpg" alt="" />
-    } @if (isLogin == false) {
-    <span class="material-symbols-outlined" (click)="alertFalse()">
-      notifications
-    </span>
-    } @else {
-    <span class="material-symbols-outlined"> notifications </span>
-    } @if (isLogin == false) {
-    <span class="material-symbols-outlined" (click)="alertFalse()">
-      favorite
-    </span>
-    } @else {
-    <span class="material-symbols-outlined"> favorite </span>
     } @if (isLogin == false) {
     <span class="material-symbols-outlined" (click)="alertFalse()">
       shopping_cart

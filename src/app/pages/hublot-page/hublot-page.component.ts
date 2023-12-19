@@ -4,6 +4,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { BottomRowNavbarComponent } from '../../components/bottom-row-navbar/bottom-row-navbar.component';
 import { AddressNavbarComponent } from '../../components/address-navbar/address-navbar.component';
 import { AddressNavbarService } from '../../components/address-navbar/address-navbar.service';
+import { PageContentsWatchesHublotComponent } from '../../components/page-contents-watches-hublot/page-contents-watches-hublot.component';
 
 @Component({
   selector: 'app-hublot-page',
@@ -12,7 +13,8 @@ import { AddressNavbarService } from '../../components/address-navbar/address-na
     CommonModule,
     NavbarComponent,
     BottomRowNavbarComponent,
-    AddressNavbarComponent
+    AddressNavbarComponent,
+    PageContentsWatchesHublotComponent
   ],
   templateUrl: './hublot-page.component.html',
   styleUrl: './hublot-page.component.scss',

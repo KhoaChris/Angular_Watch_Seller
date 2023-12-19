@@ -14,13 +14,13 @@ import { Router } from '@angular/router';
 export class AddressNavbarComponent implements OnInit {
   pageTitle: string = '';
 
-  constructor(private addressNavbarService: AddressNavbarService, private router: Router) {}
-
+  constructor(private addressNavbarService: AddressNavbarService, private router:Router) {}
+  
   ngOnInit(): void {
     this.pageTitle = this.addressNavbarService.getPageTitle();
   }
 
   navToWatches() {
-    this.router.navigate(['/Watches']);
+    this.router.navigate(['Watches']);
   }
 }
