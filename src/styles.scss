@@ -97,3 +97,21 @@ html {
   --mdc-dialog-subhead-color: none;
   --mdc-dialog-supporting-text-color: none;
 }
+
+.mat-mdc-menu-content .mat-mdc-menu-item .mat-mdc-menu-item-text {
+  display: contents;
+}
+
+.mat-mdc-menu-item {
+  gap: 10px;
+}
+
+.mat-mdc-menu-content {
+  background-color: darken($color: white, $amount: 3);
+}
+
+.mat-elevation-z8,
+.mat-mdc-elevation-specific.mat-elevation-z8 {
+  margin-top: 10px;
+}
+

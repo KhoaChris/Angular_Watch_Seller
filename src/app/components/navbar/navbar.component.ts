@@ -9,11 +9,12 @@ import {
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { PopupService } from '../popup/popup.service';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatMenuModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   changeDetection: ChangeDetectionStrategy.Default,

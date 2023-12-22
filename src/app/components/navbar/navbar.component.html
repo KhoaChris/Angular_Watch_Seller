@@ -6,21 +6,28 @@
   <div class="contents">
     <a class="features" (click)="navToHome()">HOME</a>
     <a class="features" (click)="navToWatches()">WATCHES</a>
-    <a class="features" (click)="navToAboutUs()">ABOUT</a>
     <a class="features" (click)="navToAccessories()">ACESSORIES</a>
+    <a class="features" (click)="navToAboutUs()">ABOUT</a>
   </div>
 
   <div class="user-contents">
     @if (isLogin == false) {
-    <span class="material-symbols-outlined"> account_circle </span>
-    } @else {
-    <img id="avatar-pic" src="../../../assets/unnamed.jpg" alt="" />
-    } @if (isLogin == false) {
     <span class="material-symbols-outlined" (click)="alertFalse()">
-      shopping_cart
+      account_circle
     </span>
     } @else {
-    <span class="material-symbols-outlined"> shopping_cart </span>
+    <img
+      id="avatar-pic"
+      src="../../../assets/unnamed.jpg"
+      alt=""
+      [matMenuTriggerFor]="menu"
+    />
+    } @if (isLogin == false) {
+    <span class="material-symbols-outlined" (click)="alertFalse()">
+      notifications
+    </span>
+    } @else {
+    <span class="material-symbols-outlined"> notifications </span>
     } @if (isLogin == false) {
     <span class="material-symbols-outlined" (click)="navToLogin()">login</span>
     } @else if (isLogin == true) {
@@ -28,3 +35,18 @@
     }
   </div>
 </div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item class="dialog-btn">
+    <span class="material-symbols-outlined"> manage_accounts </span>
+    <span class="context">Account Setting</span>
+  </button>
+  <button mat-menu-item class="dialog-btn">
+    <span class="material-symbols-outlined"> favorite </span>
+    <span class="context">Favorite</span>
+  </button>
+  <button mat-menu-item class="dialog-btn">
+    <span class="material-symbols-outlined"> shopping_cart </span>
+    <span class="context">Your Cart</span>
+  </button>
+</mat-menu>
