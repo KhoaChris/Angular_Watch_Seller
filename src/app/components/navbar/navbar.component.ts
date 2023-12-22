@@ -45,7 +45,7 @@ export class NavbarComponent implements OnInit {
     this.popupService.openPopup('You have successfully log out');
 
     // Delay for 2 seconds before reloading the page
-    await this.delay(2000);
+    await this.delay(1000);
 
     window.location.reload();
     this.router.navigate(['']);

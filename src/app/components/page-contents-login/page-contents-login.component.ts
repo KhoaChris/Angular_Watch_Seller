@@ -63,7 +63,7 @@ export class PageContentsLoginComponent {
           );
 
           // Delay for 2 seconds before reloading the page
-          await this.delay(2000);
+          await this.delay(1000);
 
           this.router.navigate(['']);
           break;
