@@ -70,6 +70,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['About-Us']);
   }
 
+  navToAccessories() {
+    this.router.navigate(['Accessories']);
+  }
+
   alertFalse() {
     this.popupService.openPopup('Please login first to use this function');
   }
