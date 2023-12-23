@@ -1,9 +1,16 @@
 .container {
   display: flex;
-  // align-items: center;
-  // justify-content: center;
+  flex-direction: column;
+  background-color: #262626;
+  padding-top: 20px;
 }
 
 svg {
   align-self: center;
+}
+
+.choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
