@@ -65,11 +65,11 @@
 .user-contents {
   display: flex;
   gap: 30px;
+  align-items: center;
+  font-size: 25px;
 
   span {
-    font-size: 25px;
     cursor: pointer;
-    color: #262626;
 
     &:hover {
       color: darken($color: #262626, $amount: 30);
@@ -84,3 +84,9 @@
   border: 2px solid lighten($color: green, $amount: 10);
   cursor: pointer;
 }
+
+.material-symbols-outlined {
+  font-size: 25px;
+  color: #262626;
+}
+

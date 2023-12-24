@@ -27,7 +27,14 @@
       notifications
     </span>
     } @else {
-    <span class="material-symbols-outlined"> notifications </span>
+    <span
+      class="material-symbols-outlined"
+      matBadge="3"
+      matBadgeColor="warn"
+      matBadgeSize="small"
+    >
+      notifications
+    </span>
     } @if (isLogin == false) {
     <span class="material-symbols-outlined" (click)="navToLogin()">login</span>
     } @else if (isLogin == true) {
@@ -43,10 +50,17 @@
   </button>
   <button mat-menu-item class="dialog-btn">
     <span class="material-symbols-outlined"> favorite </span>
-    <span class="context">Favorite</span>
+    <span class="context">Favorites</span>
   </button>
   <button mat-menu-item class="dialog-btn">
-    <span class="material-symbols-outlined"> shopping_cart </span>
+    <span
+      class="material-symbols-outlined"
+      matBadge="1"
+      matBadgeSize="small"
+      matBadgeColor="warn"
+    >
+      shopping_cart
+    </span>
     <span class="context">Your Cart</span>
   </button>
 </mat-menu>
