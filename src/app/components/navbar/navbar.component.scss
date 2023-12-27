@@ -90,3 +90,9 @@
   color: #262626;
 }
 
+// Style the menu wrapper when it is open
+.mat-menu-panel {
+  // Customize the position as needed
+  // For example, to center the menu horizontally, set margin-left to 50%
+  margin-left: 50%;
+}
