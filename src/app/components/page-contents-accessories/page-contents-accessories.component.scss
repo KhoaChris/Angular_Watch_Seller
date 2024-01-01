@@ -49,8 +49,9 @@ svg {
   &:hover {
     border-radius: 8px;
     animation-duration: 0.25s;
-    border-left: 6px solid darken($color: #262626, $amount: 10);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    transition: 0.5s;
+    // border-left: 6px solid darken($color: #262626, $amount: 10);
+    // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    filter: drop-shadow(-16px 7px 5px darken($color: gray, $amount: 60));
+    transition: all 0.7s;
   }
 }
