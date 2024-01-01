@@ -1,0 +1,73 @@
+.login-container {
+  background-color: transparent;
+  backdrop-filter: blur(14px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 50px;
+  margin-top: 160px;
+}
+
+h1 {
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  letter-spacing: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  p {
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
+}
+
+.user {
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px;
+  background-color: #464444;
+  outline: none;
+  font-size: 15px;
+  border: 1px solid #464444;
+  height: 15px;
+  width: 250px;
+
+  &:hover {
+    background-color: lighten($color: #464444, $amount: 2);
+    border-color: lighten($color: #464444, $amount: 2);
+  }
+}
+
+#btn-login {
+  background-color: #ffffffcc;
+  border-radius: 4px;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+  border: 1px solid #464444;
+  color: #000;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 140px;
+  align-self: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color: #ffffffcc, $amount: 10);
+  }
+}

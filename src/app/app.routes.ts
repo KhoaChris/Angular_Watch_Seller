@@ -7,6 +7,7 @@ import { AboutUsPageComponent } from './pages/about-us-page/about-us-page.compon
 import { HublotPageComponent } from './pages/hublot-page/hublot-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { AccessoriesPageComponent } from './pages/accessories-page/accessories-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 
 export const routes: Routes = [
   { path: 'Home', component: HomePageComponent }, // Updated default route
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'About-Us', component: AboutUsPageComponent },
   { path: 'Watches/Hublot', component: HublotPageComponent },
   { path: 'Accessories', component: AccessoriesPageComponent },
+  { path: 'Contact', component: ContactPageComponent },
   {path: '**', component: NotFoundPageComponent}
 ];
