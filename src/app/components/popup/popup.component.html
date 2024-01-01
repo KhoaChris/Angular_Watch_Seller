@@ -1,5 +1,72 @@
+@if (isLogin == true) {
 <div id="container">
+  <div class="icon__wrapper">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M5 12l5 5l10 -10"></path>
+    </svg>
+  </div>
   <div mat-dialog-content id="contents">
     <p>{{ data.message }}</p>
   </div>
 </div>
+} @else if (isLogin == false) {
+<div id="container">
+  <div class="icon_wrapper_error">
+    <svg
+      width="30px"
+      height="30px"
+      viewBox="-7.52 -7.52 31.04 31.04"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      fill="white"
+      stroke="white"
+      stroke-width="0.00016"
+      transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
+    >
+      <g
+        id="SVGRepo_bgCarrier"
+        stroke-width="0"
+        transform="translate(1.5999999999999996,1.5999999999999996), scale(0.8)"
+      >
+        <rect
+          x="-7.52"
+          y="-7.52"
+          width="31.04"
+          height="31.04"
+          rx="15.52"
+          fill="#e82121"
+          strokewidth="0"
+        ></rect>
+      </g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="#CCCCCC"
+        stroke-width="0.032"
+      ></g>
+      <g id="SVGRepo_iconCarrier">
+        <rect width="16" height="16" id="icon-bound" fill="none"></rect>
+        <polygon
+          points="14.707,2.707 13.293,1.293 8,6.586 2.707,1.293 1.293,2.707 6.586,8 1.293,13.293 2.707,14.707 8,9.414 13.293,14.707 14.707,13.293 9.414,8 "
+        ></polygon>
+      </g>
+    </svg>
+  </div>
+  <div mat-dialog-content id="contents">
+    <p>{{ data.message }}</p>
+  </div>
+</div>
+}
