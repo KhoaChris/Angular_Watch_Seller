@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 20px;
+  padding: 15px;
   background-color: lighten($color: #464444, $amount: 10);
   border-radius: 40px;
   position: fixed;
@@ -26,13 +26,13 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: #9ce6a8;
+  background-color: #1ea935;
   margin-right: 8px;
   padding: 6px;
 }
 
 .icon__wrapper svg {
-  stroke: #464444;
+  stroke: white;
   stroke-width: 3px;
 }
 
