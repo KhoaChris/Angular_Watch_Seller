@@ -25,6 +25,7 @@ export class PopupComponent {
   ) {}
 
   isLogin = false;
+  isLogOut = true;
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
