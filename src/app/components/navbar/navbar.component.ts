@@ -5,6 +5,8 @@ import {
   Inject,
   OnInit,
   PLATFORM_ID,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
@@ -27,6 +29,7 @@ export class NavbarComponent implements OnInit {
     private popupService: PopupService
   ) {}
 
+  @Output() toggleSidenavEvent = new EventEmitter<void>();
   isLogin = false;
 
   ngOnInit(): void {
@@ -78,5 +81,9 @@ export class NavbarComponent implements OnInit {
 
   alertFalse() {
     this.popupService.openPopup('Please login first to use this function');
+  }
+
+  toggleSidenav() {
+    this.toggleSidenavEvent.emit();
   }
 }
