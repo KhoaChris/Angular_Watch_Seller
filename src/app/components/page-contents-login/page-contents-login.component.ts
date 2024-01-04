@@ -58,7 +58,6 @@ export class PageContentsLoginComponent {
         ) {
           localStorage.setItem('isLogin', '1');
           localStorage.setItem('account', JSON.stringify(user));
-          // console.log(user);
           this.popupService.openPopup(
             'You have successfully logged in. Redirect to Home page.'
           );
@@ -68,14 +67,16 @@ export class PageContentsLoginComponent {
 
           this.router.navigate(['']);
           break;
-        } else if (
-          user.username !== this.loginForm.value.username ||
-          user.password !== this.loginForm.value.password
-        ) {
-          this.popupService.openPopup('Password or username is INCORRECT !!!');
-          break;
         }
       }
+      //   } else if (
+      //     user.username != this.loginForm.value.username &&
+      //     user.password != this.loginForm.value.password
+      //   ) {
+      //     this.popupService.openPopup('Password or username is INCORRECT !!!');
+      //     break;
+      //   }
+      // }
     } else if (this.loginForm.invalid) {
       this.popupService.openPopup(
         'Please FILL IN both username and password !!!'

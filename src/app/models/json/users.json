@@ -3,13 +3,13 @@
     "username": "khoabui",
     "email": "khoabui@example.com",
     "password": "21042003",
-    "imgURL" : "../../assets/unnamed.png"
+    "imgURL" : "../assets/avatar1.jpg"
   },
   {
-    "username": "maitran",
-    "email": "maitran@example.com",
-    "password": "22022002",
-    "imgURL" : ""
+    "username": "khoa123",
+    "email": "khoa123@example.com",
+    "password": "123456",
+    "imgURL" : "../assets/avatar2.jpg"
   },
   {
     "username": "MikeJohnson",

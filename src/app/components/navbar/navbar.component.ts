@@ -44,14 +44,17 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  getAvatarSrc(): string {
-    // Get the stored imgURL from localStorage
-    const imgURL = localStorage.getItem('imgURL');
+  getUserAvatarURL() {
+    if (this.isLogin) {
+      const storedAccount = window.localStorage.getItem('account');
+      if (storedAccount) {
+        const account = JSON.parse(storedAccount);
+        return account.imgURL; // Provide a default URL if imgURL is not available
+      }
+    }
 
-    // Check if imgURL is available, if not, provide a default image or handle it accordingly
-    return imgURL ? imgURL : 'path_to_default_avatar_image';
+    return '../assets/none-user.png';
   }
-
 
   async logOut() {
     localStorage.removeItem('isLogin');
