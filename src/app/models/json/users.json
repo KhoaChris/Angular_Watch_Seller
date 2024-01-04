@@ -1,7 +1,32 @@
 [
   {
     "username": "khoabui",
-    "email": "khoabui@gmail.com",
-    "password": "21042003"
+    "email": "khoabui@example.com",
+    "password": "21042003",
+    "imgURL" : "../../assets/unnamed.png"
+  },
+  {
+    "username": "maitran",
+    "email": "maitran@example.com",
+    "password": "22022002",
+    "imgURL" : ""
+  },
+  {
+    "username": "MikeJohnson",
+    "email": "mikejohnson@example.com",
+    "password": "mike123",
+    "imgURL" : ""
+  },
+  {
+    "username": "EmilyDavis",
+    "email": "emilydavis@example.com",
+    "password": "emily456",
+    "imgURL" : ""
+  },
+  {
+    "username": "ChrisWilson",
+    "email": "chriswilson@example.com",
+    "password": "wilson789", 
+    "imgURL" : ""
   }
 ]
