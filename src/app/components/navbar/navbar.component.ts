@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   isLogin = false;
+  users = require('../../models/json/users.json');
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -39,6 +40,15 @@ export class NavbarComponent implements OnInit {
       console.log('You must active in the browser');
     }
   }
+
+  getAvatarSrc(): string {
+    // Get the stored imgURL from localStorage
+    const imgURL = localStorage.getItem('imgURL');
+
+    // Check if imgURL is available, if not, provide a default image or handle it accordingly
+    return imgURL ? imgURL : 'path_to_default_avatar_image';
+  }
+
 
   async logOut() {
     localStorage.removeItem('isLogin');

@@ -58,6 +58,7 @@ export class PageContentsLoginComponent {
         ) {
           localStorage.setItem('isLogin', '1');
           localStorage.setItem('account', JSON.stringify(user));
+          // console.log(user);
           this.popupService.openPopup(
             'You have successfully logged in. Redirect to Home page.'
           );
@@ -71,7 +72,8 @@ export class PageContentsLoginComponent {
           user.username !== this.loginForm.value.username ||
           user.password !== this.loginForm.value.password
         ) {
-          this.popupService.openPopup('Pasword or username is INCORRECT !!!');
+          this.popupService.openPopup('Password or username is INCORRECT !!!');
+          break;
         }
       }
     } else if (this.loginForm.invalid) {
