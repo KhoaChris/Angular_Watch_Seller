@@ -81,8 +81,13 @@
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  border: 2px solid lighten($color: green, $amount: 10);
+  border: 2px solid darken($color: white, $amount: 20);
   cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    border: 2px solid lighten($color: green, $amount: 10);
+  }
 }
 
 .material-symbols-outlined {
