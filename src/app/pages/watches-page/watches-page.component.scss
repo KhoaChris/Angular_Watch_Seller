@@ -6,10 +6,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-position-y: -70px;
   display: flex;
   flex-direction: column;
   gap: 23.438rem;
+  border-image: fill 0 linear-gradient(rgba(207, 204, 204, 0.067),#262626);
 }
 
 svg {

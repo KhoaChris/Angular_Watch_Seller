@@ -30,7 +30,7 @@
   justify-content: center;
   cursor: pointer;
   position: relative;
-  transition: all 0.6s ease-out;
+  transition: all 0.5s ease-out;
 
   p {
     color: #fff;
@@ -60,4 +60,9 @@
 
 #v-content {
   gap: 18px;
+}
+
+.main-container:has(.watch-content:hover)
+.watch-content:not(:hover) {
+  filter: grayscale(100%) brightness(50%);
 }
