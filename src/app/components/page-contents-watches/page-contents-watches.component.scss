@@ -1,8 +1,14 @@
 .main-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: #262626;
   padding-top: 10px;
   padding-bottom: 20px;
+}
+
+svg {
+  align-self: center;
 }
 
 .container-watches {
