@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from './popup.component';
+import { transition } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root',
