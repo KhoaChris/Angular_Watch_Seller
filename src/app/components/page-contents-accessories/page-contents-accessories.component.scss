@@ -38,7 +38,7 @@ svg {
   transition: all 0.5s ease-out;
 
   p {
-    color: #fff;
+    color: darken($color: #fff, $amount: 15);
     font-family: Roboto, sans-serif;
     font-size: 24px;
     font-style: normal;
