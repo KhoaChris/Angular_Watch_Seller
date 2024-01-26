@@ -1,18 +1,32 @@
 //change the height of the background to match the size of the page ( need to do )
-.picture-cover-navbar { 
+.picture-cover-navbar {
   width: 100%;
-  height: 31.875rem;
+  height: 19.5rem;
   background: url(../../../assets/image3.png);
   background-color: #262626;
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
+  background-position-y: -50px;
   display: flex;
   flex-direction: column;
-  gap: 23.438rem;
-  border-image: fill 0 linear-gradient(rgba(207, 204, 204, 0.067),#262626);
+  border-image: fill 0 linear-gradient(rgba(207, 204, 204, 0.067), #262626);
 }
 
-svg {
-  align-self: center;
+.svg-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+p {
+  color: darken($color: #fff, $amount: 20);
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  word-spacing: 0.5rem;
 }
