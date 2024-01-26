@@ -3,17 +3,41 @@
   flex-direction: column;
   background: url(../../../assets/background-contact.png);
   width: 100%;
-  height: 20rem;
+  height: 43.1rem;
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-position-y: -80px;
+  background-position-y: -110px;
   border-image: fill 0 linear-gradient(rgba(207, 204, 204, 0.067), #262626);
 }
 
 .contents-container {
   display: flex;
+  flex: 0.5;
   justify-content: center;
   align-items: center;
-  background: #262626;
-}  
+}
+
+.big-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.svg-container {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+p {
+  color: darken($color: #fff, $amount: 15);
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  word-spacing: 0.5rem;
+}
