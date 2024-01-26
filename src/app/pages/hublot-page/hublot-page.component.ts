@@ -14,7 +14,8 @@ import { PageContentsWatchesHublotComponent } from '../../components/page-conten
     NavbarComponent,
     BottomRowNavbarComponent,
     AddressNavbarComponent,
-    PageContentsWatchesHublotComponent
+    PageContentsWatchesHublotComponent,
+    BottomRowNavbarComponent
   ],
   templateUrl: './hublot-page.component.html',
   styleUrl: './hublot-page.component.scss',
