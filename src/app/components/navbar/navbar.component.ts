@@ -96,7 +96,9 @@ export class NavbarComponent implements OnInit {
     this.popupService.openPopup('Please login first to use this function');
   }
 
-  toggleSidenav() {
-    this.toggleSidenavEvent.emit();
+  isSmallScreen = false;
+
+  toggleMenu(){
+    this.isSmallScreen = !this.isSmallScreen;
   }
 }

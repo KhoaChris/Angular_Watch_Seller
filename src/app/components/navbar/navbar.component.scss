@@ -6,6 +6,32 @@
   height: 70px;
   background: white;
   opacity: 0.8;
+
+  @media (max-width: 900px) {
+    .contents {
+      display: none; // Hide regular navigation links on small screens
+    }
+
+    .menu-icon {
+      display: block; // Show menu icon on small screens
+    }
+
+    .mobile-menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px; // Adjust this value based on your header height
+      left: 0;
+      width: 100%;
+      background: white;
+      opacity: 0.8;
+    }
+  }
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
 }
 
 .logo {

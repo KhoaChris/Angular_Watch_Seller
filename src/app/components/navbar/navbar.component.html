@@ -18,7 +18,7 @@
     } @else {
     <img
       id="avatar-pic"
-      [src] = "getUserAvatarURL()"
+      [src]="getUserAvatarURL()"
       alt=""
       [matMenuTriggerFor]="menu"
     />
@@ -32,7 +32,6 @@
       matBadge="3"
       matBadgeColor="warn"
       matBadgeSize="small"
-      (click)="toggleSidenav()"
     >
       notifications
     </span>
@@ -42,9 +41,22 @@
     <span class="material-symbols-outlined" (click)="logOut()"> logout </span>
     }
   </div>
+
+  <div class="menu-icon" (click)="toggleMenu()">
+    <span class="material-symbols-outlined">menu</span>
+  </div>
 </div>
 
-<mat-menu #menu="matMenu" >
+@if(isSmallScreen){
+  <div class="mobile-menu">
+    <a class="features" (click)="navToHome()">HOME</a>
+    <a class="features" (click)="navToWatches()">WATCHES</a>
+    <a class="features" (click)="navToAccessories()">ACESSORIES</a>
+    <a class="features" (click)="navToAboutUs()">ABOUT</a>
+  </div>
+}
+
+<mat-menu #menu="matMenu">
   <button mat-menu-item class="dialog-btn">
     <span class="material-symbols-outlined"> manage_accounts </span>
     <span class="context">Account Setting</span>
@@ -65,7 +77,3 @@
     <span class="context">Your Cart</span>
   </button>
 </mat-menu>
-
-<div id="mySidenav" class="sidenav">
-
-</div>
