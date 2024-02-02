@@ -1,0 +1,10 @@
+.picture-container {
+  width: 100%;
+  height: 20rem;
+  background: url(../../../assets/Omega.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: -30px;
+  border-image: fill 0 linear-gradient(rgba(91, 86, 86, 0), #262626);
+}

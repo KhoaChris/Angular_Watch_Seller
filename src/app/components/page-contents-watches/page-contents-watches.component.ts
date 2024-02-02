@@ -16,4 +16,12 @@ export class PageContentsWatchesComponent {
   navToHublot() {
     this.router.navigate(['Watches/Hublot'])
   }
+  
+  navToRolex() {
+    this.router.navigate(['Watches/Rolex'])
+  }
+
+  navToOmega() {
+    this.router.navigate(['Watches/Omega'])
+  }
 }
