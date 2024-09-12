@@ -24,4 +24,8 @@ export class PageContentsWatchesComponent {
   navToOmega() {
     this.router.navigate(['Watches/Omega'])
   }
+
+  navToConstantin() {
+    this.router.navigate(['Watches/VacheronConstantin'])
+  }
 }

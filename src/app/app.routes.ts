@@ -10,6 +10,7 @@ import { OmegaPageComponent } from './pages/omega-page/omega-page.component';
 import { AccessoriesPageComponent } from './pages/accessories-page/accessories-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { VacheronConstantinComponent } from './pages/vcons-page/vcons-page.component';
 
 export const routes: Routes = [
   { path: 'Home', component: HomePageComponent }, // Updated default route
@@ -21,6 +22,7 @@ export const routes: Routes = [
   { path: 'Watches/Hublot', component: HublotPageComponent },
   { path: 'Watches/Rolex', component: RolexPageComponent },
   { path: 'Watches/Omega', component: OmegaPageComponent },
+  { path: 'Watches/VacheronConstantin', component: VacheronConstantinComponent},
   { path: 'Accessories', component: AccessoriesPageComponent },
   { path: 'Contact', component: ContactPageComponent },
   { path: '**', component: NotFoundPageComponent },
