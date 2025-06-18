@@ -1,45 +1,20 @@
 <div class="main-container">
   <div class="item-container">
-    <div class="card" style="--text: white">
+    <div *ngFor="let product of products" class="card" style="--text: white">
       <div class="multi-btn">
-        <span class="material-symbols-outlined"> favorite </span>
-        <span class="material-symbols-outlined"> add </span>
-        <span class="material-symbols-outlined"> info_i </span>
+        <span class="material-symbols-outlined btn-favorite" (click)="addToFavorites(product)"  > favorite </span>
+        <span class="material-symbols-outlined btn-add" (click)="addToCart(product)"> add </span>
+        <span class="material-symbols-outlined btn-info" (click)="openInfoModal(product)"> info_i </span>
       </div>
-    </div>
-    <div class="card" style="--text: white">
-      <div class="multi-btn">
-        <span class="material-symbols-outlined"> favorite </span>
-        <span class="material-symbols-outlined"> add </span>
-        <span class="material-symbols-outlined"> info_i </span>
+
+      <div class="product-image">
+        <img [src]="product.imageUrl" [alt]="product.name" />
       </div>
-    </div>
-    <div class="card" style="--text: white">
-      <div class="multi-btn">
-        <span class="material-symbols-outlined"> favorite </span>
-        <span class="material-symbols-outlined"> add </span>
-        <span class="material-symbols-outlined"> info_i </span>
-      </div>
-    </div>
-    <div class="card" style="--text: white">
-      <div class="multi-btn">
-        <span class="material-symbols-outlined"> favorite </span>
-        <span class="material-symbols-outlined"> add </span>
-        <span class="material-symbols-outlined"> info_i </span>
-      </div>
-    </div>
-    <div class="card" style="--text: white">
-      <div class="multi-btn">
-        <span class="material-symbols-outlined"> favorite </span>
-        <span class="material-symbols-outlined"> add </span>
-        <span class="material-symbols-outlined"> info_i </span>
-      </div>
-    </div>
-    <div class="card" style="--text: white">
-      <div class="multi-btn">
-        <span class="material-symbols-outlined"> favorite </span>
-        <span class="material-symbols-outlined"> add </span>
-        <span class="material-symbols-outlined"> info_i </span>
+
+      <div class="product-info">
+        <p class="collection">{{ product.collection }}</p>
+        <h3 class="name">{{ product.name }}</h3>
+        <p class="price">{{ product.price }}</p>
       </div>
     </div>
   </div>

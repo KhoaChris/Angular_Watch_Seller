@@ -59,7 +59,7 @@ export class PageContentsLoginComponent {
           localStorage.setItem('isLogin', '1');
           localStorage.setItem('account', JSON.stringify(user));
           this.popupService.openPopup(
-            'You have successfully logged in. Redirect to Home page.'
+            'You have successfully logged in. Redirect to Home page.','success'
           );
 
           // Delay for 2 seconds before reloading the page
@@ -79,7 +79,7 @@ export class PageContentsLoginComponent {
       // }
     } else if (this.loginForm.invalid) {
       this.popupService.openPopup(
-        'Please FILL IN both username and password !!!'
+        'Please FILL IN both username and password !!!','error'
       );
     }
   }

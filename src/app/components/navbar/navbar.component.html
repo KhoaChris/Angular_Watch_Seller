@@ -1,6 +1,6 @@
 <div class="navbar">
   <div class="logo">
-    <img src="../../../assets/LOGO1.png" alt="">
+    <img src="../../../assets/images/LOGO1.png" alt="" />
   </div>
 
   <div class="contents">
@@ -29,7 +29,6 @@
     } @else {
     <span
       class="material-symbols-outlined"
-      matBadge="3"
       matBadgeColor="warn"
       matBadgeSize="small"
     >
@@ -48,12 +47,12 @@
 </div>
 
 @if(isSmallScreen){
-  <div class="mobile-menu">
-    <a class="features" (click)="navToHome()">HOME</a>
-    <a class="features" (click)="navToWatches()">WATCHES</a>
-    <a class="features" (click)="navToAccessories()">ACESSORIES</a>
-    <a class="features" (click)="navToAboutUs()">ABOUT</a>
-  </div>
+<div class="mobile-menu">
+  <a class="features" (click)="navToHome()">HOME</a>
+  <a class="features" (click)="navToWatches()">WATCHES</a>
+  <a class="features" (click)="navToAccessories()">ACESSORIES</a>
+  <a class="features" (click)="navToAboutUs()">ABOUT</a>
+</div>
 }
 
 <mat-menu #menu="matMenu">
@@ -61,19 +60,29 @@
     <span class="material-symbols-outlined"> manage_accounts </span>
     <span class="context">Account Setting</span>
   </button>
-  <button mat-menu-item class="dialog-btn">
-    <span class="material-symbols-outlined"> favorite </span>
-    <span class="context">Favorites</span>
-  </button>
-  <button mat-menu-item class="dialog-btn">
+  <button mat-menu-item class="dialog-btn" (click)="openFavoritesDrawer()">
     <span
       class="material-symbols-outlined"
-      matBadge="1"
+      [matBadge]="favoriteCount"
+      matBadgeSize="small"
+      matBadgeColor="warn"
+    >
+      favorite
+    </span>
+    <span class="context">Favorites</span>
+  </button>
+  <button mat-menu-item class="dialog-btn" (click)="navToBilling()">
+    <span
+      class="material-symbols-outlined"
+      [matBadge]="cartCount"
       matBadgeSize="small"
       matBadgeColor="warn"
     >
       shopping_cart
     </span>
-    <span class="context">Your Cart</span>
+    <span class="context">My Cart</span>
   </button>
 </mat-menu>
+
+
+

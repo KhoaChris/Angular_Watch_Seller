@@ -1,4 +1,4 @@
-@if (isLogin == true) {
+@if (isSuccess) {
 <div id="container">
   <div class="icon__wrapper">
     <svg
@@ -20,7 +20,8 @@
     <p>{{ data.message }}</p>
   </div>
 </div>
-} @else if (isLogin == false) {
+
+} @else{
 <div id="container">
   <div class="icon_wrapper_error">
     <svg

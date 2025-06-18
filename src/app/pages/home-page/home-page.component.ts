@@ -18,9 +18,5 @@ import { PageContentsComponent } from '../../components/page-contents-home/page-
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class HomePageComponent {
-  isSidenavOpen = false;
-
-  toggleSidebar() {
-    this.isSidenavOpen = !this.isSidenavOpen;
-  }
+  
 }

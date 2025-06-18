@@ -11,6 +11,7 @@ import { AccessoriesPageComponent } from './pages/accessories-page/accessories-p
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { VacheronConstantinComponent } from './pages/vcons-page/vcons-page.component';
+import { BillingPageComponent } from './pages/billing-page/billing-page.component';
 
 export const routes: Routes = [
   { path: 'Home', component: HomePageComponent }, // Updated default route
@@ -25,5 +26,6 @@ export const routes: Routes = [
   { path: 'Watches/VacheronConstantin', component: VacheronConstantinComponent},
   { path: 'Accessories', component: AccessoriesPageComponent },
   { path: 'Contact', component: ContactPageComponent },
+  { path: 'Billing', component: BillingPageComponent},
   { path: '**', component: NotFoundPageComponent },
 ];

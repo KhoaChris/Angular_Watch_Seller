@@ -1,102 +1,115 @@
 .main-container {
-  width: 100%;
-  height: 100%;
   background-color: #262626;
-  display: flex;
-  justify-content: center;
-}
-
-.item-container {
-  display: grid;
-  width: 90%;
-  background-color: #262626;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  grid-gap: 5rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding: 2rem;
 }
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 200, "GRAD" 0, "opsz" 20;
 }
 
-.card {
-  background: lighten($color: #262626, $amount: 7);
-  color: var(--text);
-  position: relative;
-  // height: 20rem;
-  box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.05);
-  border-radius: 1rem;
+.item-container {
+  display: grid;
+  background-color: #262626;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 5rem;
+  padding: 2rem;
+}
 
-  &:hover .multi-btn,
-  .multi-btn:focus-within {
-    //Hover or a button inside is focused
-    width: 10rem;
-    height: 10rem;
+.card {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  color: white;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    .multi-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .multi-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s;
 
     span {
-      opacity: 1;
+      background: #2e2e2e;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+
+      // ✅ Specific button hover effects
+      &.btn-favorite:hover {
+        background: darken($color: red, $amount: 10);
+        color: white;
+        box-shadow: 0 0 1rem red;
+      }
+
+      &.btn-add:hover {
+        background: green;
+        color: white;
+        box-shadow: 0 0 1rem green;
+      }
+
+      &.btn-info:hover {
+        background: darken($color: white, $amount: 10);
+        color: #262626;
+        box-shadow: 0 0 1rem white;
+      }
     }
   }
 }
 
-.multi-btn {
-  z-index: 0;
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  border-radius: 100%;
-  width: 0rem;
-  height: 0rem;
-  transform: translate(-50%, -50%);
-  transition: 1.5s cubic-bezier(0.25, 0, 0, 1);
+.product-image {
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
 }
 
-span {
-  opacity: 0;
-  display: grid;
-  place-items: center;
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  border: none;
-  border-radius: 100%;
-  background: lighten($color: #262626, $amount: 7);
-  color: var(--text);
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
-  box-shadow: 0 0 0rem -0.25rem lighten($color: #262626, $amount: 7);
-  &:hover {
-    background: var(--text);
-    color: lighten($color: #262626, $amount: 7);
-    box-shadow: 0 0 1rem -0.25rem lighten($color: #262626, $amount: 7);
+.product-info {
+  padding: 1rem;
+  text-align: center;
+
+  .collection {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 0.25rem;
+    letter-spacing: 1px;
   }
 
-  &:first-child:nth-last-child(3),
-  &:first-child:nth-last-child(3) ~ * {
-    //If there are 3 children
-    &:nth-child(1) {
-      left: 50%;
-      top: 15.625%;
-      &:hover {
-        background: var(--text);
-        color: lighten($color: red, $amount: 3);
-        box-shadow: 0 0 1rem -0.25rem lighten($color: red, $amount: 3);
-      }
-    }
-    &:nth-child(2) {
-      left: 25%;
-      top: 25%;
-      &:hover {
-        background: var(--text);
-        color: lighten($color: green, $amount: 2);
-        box-shadow: 0 0 1rem -0.25rem lighten($color: green, $amount: 2);
-      }
-    }
-    &:nth-child(3) {
-      left: 15.625%;
-      top: 50%;
-    }
+  .name {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #e53935;
   }
 }

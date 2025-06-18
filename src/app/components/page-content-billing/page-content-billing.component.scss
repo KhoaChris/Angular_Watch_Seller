@@ -1,0 +1,136 @@
+// .billing-container {
+//   padding: 2rem;
+//   max-width: 1000px;
+//   margin: 0 auto;
+//   color: white;
+//   font-family: "Helvetica", sans-serif;
+// }
+
+// .heading {
+//   text-align: center;
+//   font-size: 1.75rem;
+//   font-weight: 600;
+//   margin-bottom: 2rem;
+// }
+
+// .summary-section {
+//   background: #2a2a2a;
+//   padding: 1.5rem;
+//   border-radius: 10px;
+//   margin-bottom: 2rem;
+
+//   h3 {
+//     font-size: 1.2rem;
+//     margin-bottom: 1rem;
+//   }
+
+//   .summary-line {
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 0.5rem 0;
+//     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+//     &.total {
+//       font-weight: bold;
+//       color: #e63946;
+//     }
+//   }
+
+//   .checkout-btn {
+//     margin-top: 1rem;
+//     width: 100%;
+//     background: #fff;
+//     color: #000;
+//     font-weight: 600;
+//     padding: 0.75rem;
+//     border: none;
+//     border-radius: 6px;
+//     cursor: pointer;
+//     transition: all 0.3s ease;
+
+//     &:hover {
+//       background: #e63946;
+//       color: white;
+//     }
+//   }
+// }
+
+// .cart-items {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.5rem;
+// }
+
+// .cart-item {
+//   display: flex;
+//   gap: 1.5rem;
+//   background: #1e1e1e;
+//   border-radius: 10px;
+//   padding: 1rem;
+
+//   img {
+//     width: 100px;
+//     height: auto;
+//     object-fit: contain;
+//     border-radius: 10px;
+//   }
+
+//   .details {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+
+//     h4 {
+//       font-size: 1.1rem;
+//       margin-bottom: 0.5rem;
+//     }
+
+//     .price {
+//       color: #e63946;
+//       font-weight: bold;
+//       margin-top: 0.5rem;
+//     }
+//   }
+// }
+
+// .empty {
+//   text-align: center;
+//   color: #aaa;
+//   margin-top: 4rem;
+// }
+
+
+//Under Contruction
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.context {
+  position: relative;
+  background-color: #262626;
+  color: #ffffffcc;
+  width: 100%;
+  height: 6.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    bottom: 0;
+    left: 30%;
+    border-bottom: 2px solid #ffffffcc;
+  }
+
+  h1{
+    font-family: "Roboto", sans-serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+  }
+}

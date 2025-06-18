@@ -9,9 +9,9 @@ import { transition } from '@angular/animations';
 export class PopupService {
   constructor(public dialog: MatDialog) {}
 
-  openPopup(message: string): void {
-    this.dialog.open(PopupComponent, {
-      data: { message },
-    });
-  }
+  openPopup(message: string, status: 'success' | 'error' = 'success'): void {
+  this.dialog.open(PopupComponent, {
+    data: { message, status },
+  });
+}
 }

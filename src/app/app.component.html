@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #favoritesDrawer mode="over" position="end" class="custom-drawer">
+      <h3>Favorites</h3>
+      <div *ngFor="let fav of favorites" class="fav-item">
+        <img [src]="fav.imageUrl" alt="{{ fav.name }}" class="fav-img" />
+        <span>{{ fav.name }}</span>
+        <button class="remove-btn" (click)="removeFromFavorites(fav)">✖</button>
+      </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-loading></app-loading>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

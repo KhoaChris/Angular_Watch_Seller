@@ -13,9 +13,9 @@ svg {
 }
 
 .container-watches {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   align-items: center;
-  justify-content: space-around;
   position: relative;
   padding-bottom: 80px;
 

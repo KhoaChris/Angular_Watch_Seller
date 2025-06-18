@@ -1,0 +1,15 @@
+<div class="dialog-container" [@popupAnimation]>
+  <button class="close-btn" mat-icon-button (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <h2>{{ data.name }}</h2>
+
+  <img
+    [src]="data.imageUrl"
+    [alt]="data.name"
+    style="width: 100%; object-fit: contain"
+  />
+
+  <p>{{ data.description }}</p>
+</div>

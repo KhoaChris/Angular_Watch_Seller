@@ -7,12 +7,18 @@ import {
   PLATFORM_ID,
   Output,
   EventEmitter,
+  ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { PopupService } from '../popup/popup.service';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
+import { CartService } from '../../services/cart.service';
+import { FavoriteService } from '../../services/favorite.service';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Product } from '../../models/json/products.model';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-navbar',
@@ -26,12 +32,17 @@ export class NavbarComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private router: Router,
-    private popupService: PopupService
+    private popupService: PopupService,
+    private cartService: CartService,
+    private favoriteService: FavoriteService,
+    private sidenavService: SidenavService
   ) {}
 
   @Output() toggleSidenavEvent = new EventEmitter<void>();
   isLogin = false;
   users = require('../../models/json/users.json');
+  cartCount = 0;
+  favoriteCount = 0;
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -42,6 +53,14 @@ export class NavbarComponent implements OnInit {
     } else {
       console.log('You must active in the browser');
     }
+
+    this.cartService.cartCount$.subscribe((count) => {
+      this.cartCount = count;
+    });
+
+    this.favoriteService.favoriteCount$.subscribe((count) => {
+      this.favoriteCount = count;
+    });
   }
 
   getUserAvatarURL() {
@@ -53,13 +72,13 @@ export class NavbarComponent implements OnInit {
       }
     }
 
-    return '../assets/none-user.png';
+    return '../assets/images/none-user.png';
   }
 
   async logOut() {
     localStorage.removeItem('isLogin');
     localStorage.removeItem('account');
-    this.popupService.openPopup('You have successfully log out');
+    this.popupService.openPopup('You have successfully logged out', 'success');
 
     // Delay for 2 seconds before reloading the page
     await this.delay(1000);
@@ -92,13 +111,26 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['Accessories']);
   }
 
+  navToBilling(){
+    this.router.navigate(['Billing']);
+  }
+
   alertFalse() {
-    this.popupService.openPopup('Please login first to use this function');
+    this.popupService.openPopup(
+      'Please login first to use this function',
+      'error'
+    );
   }
 
   isSmallScreen = false;
 
-  toggleMenu(){
+  toggleMenu() {
     this.isSmallScreen = !this.isSmallScreen;
+  }
+
+  favorites: Product[] = [];
+
+  openFavoritesDrawer() {
+    this.sidenavService.openFavorites();
   }
 }
