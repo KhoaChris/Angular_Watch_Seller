@@ -1,56 +1,32 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Inject,
-  OnInit,
-  PLATFORM_ID,
-  ViewEncapsulation,
-} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
+// Optional to export if you want to use elsewhere; not required by the service above
+export type PopupStatus = 'success' | 'error' | 'info';
+export interface PopupData {
+  message: string;
+  status?: PopupStatus;
+}
 
 @Component({
   selector: 'app-popup',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './popup.component.html',
-  styleUrl: './popup.component.scss',
+  styleUrls: ['./popup.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default,
-  encapsulation: ViewEncapsulation.None,
 })
-export class PopupComponent implements OnInit {
-  // isLogin = false;
-  // isLogOut = false;
-
+export class PopupComponent {
   constructor(
-    public dialogRef: MatDialogRef<PopupComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    @Inject(PLATFORM_ID) private platformId: Object
+    private dialogRef: MatDialogRef<PopupComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: PopupData
   ) {}
 
-  // ngOnInit(): void {
-  //   if (this.data.message?.toLowerCase().includes('log out')) {
-  //     this.isLogOut = true; // logout success
-  //   }
+  get isSuccess(): boolean { return (this.data.status || 'success') === 'success'; }
+  get isError(): boolean { return this.data.status === 'error'; }
+  get isInfo(): boolean { return this.data.status === 'info'; }
 
-  //   if (isPlatformBrowser(this.platformId)) {
-  //     const storedData = window.localStorage.getItem('isLogin');
-  //     if (storedData) {
-  //       this.isLogin = true;
-  //     } else {
-  //       console.log('Not logged in');
-  //     }
-  //   }
-  // }
-
-  isSuccess = false;
-
-  ngOnInit(): void {
-    if (this.data.status === 'success') {
-      this.isSuccess = true;
-    }
-  }
-  close(): void {
-    this.dialogRef.close();
-  }
+  close(): void { this.dialogRef.close(); }
 }
+

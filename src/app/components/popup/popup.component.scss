@@ -1,46 +1,45 @@
 #container {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 15px;
-  background-color: lighten($color: #464444, $amount: 10);
+  gap: 8px;
+  padding: 14px 18px;
+  background-color: rgba(36, 36, 36, 0.92);
   border-radius: 40px;
   position: fixed;
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none; // allow clicks through
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
 #contents {
   color: white;
-  font-family: Roboto, sans-serif;
-  font-size: 17px;
-  font-style: normal;
+  font-family: Roboto, Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
   font-weight: 500;
+  letter-spacing: 0.2px;
 }
 
 .icon__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #1ea935;
-  margin-right: 8px;
-  padding: 6px;
+  pointer-events: none;
 }
 
 .icon__wrapper svg {
   stroke: white;
-  stroke-width: 3px;
+  stroke-width: 2.4px;
 }
 
-.icon_wrapper_error {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* styled via panelClass from service */
+:host-context(.popup-error) #container {
+  background-color: rgba(120, 16, 16, 0.92);
 }
-
-
-
+:host-context(.popup-success) #container {
+  background-color: rgba(28, 120, 28, 0.92);
+}
+:host-context(.popup-info) #container {
+  background-color: rgba(36, 36, 36, 0.92);
+}

@@ -25,10 +25,10 @@ img {
   width: 100%;
   max-width: 300px;
   height: auto;
-  // border-radius: 0.5rem;
+  border-radius: 0.5rem;
   object-fit: contain;
   margin-bottom: 1.5rem;
-  box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.08);
+  // box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.08);
 }
 
 p {
@@ -77,5 +77,4 @@ p {
   max-width: 450px;
   margin: auto;
   text-align: center;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.6);
 }
